@@ -1,0 +1,537 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates';
+}
+
+$green: #00c853;
+$red: #e74c3c;
+$puple: #7A31F9;
+
+@mixin button($w,$h,$bg,$fs) {
+    width: $w;
+    height: $h;
+    background-color: $bg;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: $fs;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+@keyframes move {
+    0% {
+        top: -20px;
+    }
+
+    50% {
+        top: 20px;
+    }
+
+    100% {
+        top: -20px;
+    }
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.popup {
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(100,100,100,0.08);
+    border: 1px solid rgba(0,0,0,0.1);
+    backdrop-filter: blur(20px);
+    color: #000;
+    border-radius: 20px;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.registerFrame {
+    display: none;
+    .title {
+        height: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .form {
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .descPart {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                font-size: 25px;
+                text-align: center;
+            }
+        }
+
+        .buttonsContainer {
+            display: flex;
+            width: 100%;
+            height: 50%;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                margin: 10px;
+                @include button(150px,40px,$green,20px)
+            }
+
+            .backBtn {
+                background-color: $red;
+            }
+        }
+    }
+}
+
+.signFrame {
+    display: none;
+    
+    .title {
+        height: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+
+        button {
+            @include button(40px,40px,$red,16px)
+        }
+    }
+
+    .form {
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width: 70%;
+            height: 45px;
+            margin: 10px 0;
+            padding-left: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button {
+            margin-top: 20px;
+            @include button(150px,45px,#7A31F9,18px)
+        }
+    }
+}
+
+.transactionFrame {
+    display: none;
+
+    .title {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        button {
+            @include button(50px,50px,$red,18px)
+        }
+
+    }
+
+    .form {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        
+        select {
+            width: 60%;
+            height: 30px;
+
+        }
+
+        input {
+            width: 50%;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            outline: none;
+            background-color: transparent;
+            border: 1px solid rgba(100,100,100,0.08);
+            font-size: 30px;
+            color: #333;
+
+        }
+
+        button {
+            width: 70%;
+            height: 40px;
+            display: flex;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            background-color: $puple;
+            border-radius: 10px 5px 10px 5px;
+            border: none;
+            font-size: 30px;
+            color: #fff;
+        }
+    }
+    
+    .process {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+
+        .checkBox {
+            color: $puple;
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    
+}
+
+.welcomePage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        ul {
+            display: flex;
+
+            li {
+                margin: 0 20px;
+                list-style: none;
+                cursor: pointer;
+            }
+        }
+
+        .logo {
+            width: 130px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        button {
+            @include button(120px,40px,#7A31F9,16px)
+        }
+    }
+
+    .main {
+        height: 90%;
+        display: flex;
+
+        .descPart {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+
+            .textContainer {
+                h1 {
+                    font-size: 50px;
+                    span {
+                        color: $puple;
+                    }
+                }
+
+                .pointsPart {
+                    display: flex;
+                    margin: 20px 0;
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+
+                        li {
+                            font-size: 20px;
+                            font-weight: 600
+                        }
+                    }
+                }
+
+                button {
+                    @include button(150px,50px,$puple,20px);
+                    border-radius: 10px;
+                    border: 1px solid #401985
+                }
+            }
+        };
+        .imagePart {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .shape {
+                width: 50%;
+                position: relative;
+                animation: move 3s ease infinite;
+            }
+
+            .card {
+                position: relative;
+                width: 40%;
+                right: 45%;
+                animation: move 3.5s ease infinite;
+            }
+        }
+
+        .imagePart {
+            font-size: 120px;
+        }
+    }
+}
+
+.bankPage {
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    .title {
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .logo {
+            width: 130px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .accountControll {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            button {
+                @include button(120px,40px,$red,16px)
+            }
+
+            p {
+                font-size: 20px;
+                padding: 10px;
+            }
+        }
+
+        
+    }
+
+    .main {
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+
+        .dataSection {
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .dataContainer {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background-color: rgba(100,100,100,0.08);
+                    border: 1px solid rgba(0,0,0,0.1);
+                    backdrop-filter: blur(20px);
+                    font-size: 30px;
+                    transition: 0.3s ease;
+                }
+
+                button:hover {
+                    transform: scale(1.1);
+                }
+
+                h3 {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .cardsSection {
+            height: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .emptyContainer {
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+                    height: 100px;
+                    background-color: rgba(0, 150, 0, 0.3);
+                    border: 1px solid rgba(100,100,100,0.08);
+                    backdrop-filter: blur(20px);
+                    border-radius: 50%;
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    i {
+                        font-size: 40px;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .cardContainer {
+                display: none;
+                align-items: center;
+                user-select: none;
+
+                .card {
+                    width: 400px;
+                    height: 240px;
+                    border-radius: 45px 10px 45px 10px;
+                    background-image: url(./img/CardExclusive.png);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+
+                    .top {
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        align-items: center;
+                        
+                        p {
+                            margin-left: 30px;
+                            font-size: 30px;
+                            color: #fff;
+                        }
+
+
+                    }
+
+                    .middle {
+                        width: 100%;
+                        height: 40%;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            width: 60px;
+                            margin-left: 30px;
+                        }
+                    }
+
+                    .bottom {
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+
+                        .cardNumber {
+                            color: #fff;
+                            font-size: 24px;
+                        }
+
+                        img {
+                            width: 80px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .operationSection {
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .operationsContainer {
+                display: none;
+
+                button {
+                    @include button(90px,90px,rgba(255,255,255,0.08),35px);
+                    background-color: rgba(100,100,100,0.08);
+                    border: 1px solid rgba(0,0,0,0.1);
+                    margin: 0 10px;
+                    backdrop-filter: blur(20px);
+                    color: $puple;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    p {
+                        font-size: 20px;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

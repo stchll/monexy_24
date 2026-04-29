@@ -30,8 +30,7 @@
   transform: translate(-50%, -50%);
   background-color: rgba(100, 100, 100, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   color: #000;
   border-radius: 20px;
   flex-direction: column;
@@ -321,14 +320,16 @@
   font-size: 20px;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 10px;
-  border: 1px solid #401985;
 }
 .welcomePage .main .descPart .textContainer button:hover {
   transform: scale(1.05);
 }
 .welcomePage .main .descPart .textContainer button:active {
   transform: scale(0.95);
+}
+.welcomePage .main .descPart .textContainer button {
+  border-radius: 10px;
+  border: 1px solid #401985;
 }
 .welcomePage .main .imagePart {
   width: 50%;
@@ -422,8 +423,7 @@
   cursor: pointer;
   background-color: rgba(100, 100, 100, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   font-size: 30px;
   transition: 0.3s ease;
 }
@@ -447,8 +447,7 @@
   height: 100px;
   background-color: rgba(0, 150, 0, 0.3);
   border: 1px solid rgba(100, 100, 100, 0.08);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
@@ -528,22 +527,23 @@
   font-size: 35px;
   cursor: pointer;
   transition: 0.3s;
-  background-color: rgba(100, 100, 100, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0 10px;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-  color: #7A31F9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 .bankPage .main .operationSection .operationsContainer button:hover {
   transform: scale(1.05);
 }
 .bankPage .main .operationSection .operationsContainer button:active {
   transform: scale(0.95);
+}
+.bankPage .main .operationSection .operationsContainer button {
+  background-color: rgba(100, 100, 100, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  backdrop-filter: blur(20px);
+  color: #7A31F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .bankPage .main .operationSection .operationsContainer button p {
   font-size: 20px;

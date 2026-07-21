@@ -56,9 +56,8 @@ $puple: #7A31F9;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(100,100,100,0.08);
-    border: 1px solid rgba(0,0,0,0.1);
-    backdrop-filter: blur(20px);
+    background-color: #fff;
+    border: 1px solid #333;
     color: #000;
     border-radius: 20px;
     flex-direction: column;
@@ -116,7 +115,7 @@ $puple: #7A31F9;
 
 .signFrame {
     display: none;
-    
+
     .title {
         height: 15%;
         display: flex;
@@ -143,6 +142,8 @@ $puple: #7A31F9;
             padding-left: 10px;
             border-radius: 10px;
             border: none;
+            font-family: "Radio Canada";
+            border: 1px solid #333;
         }
 
         button {
@@ -253,11 +254,12 @@ $puple: #7A31F9;
                 margin: 0 20px;
                 list-style: none;
                 cursor: pointer;
+                
             }
         }
 
         .logo {
-            width: 130px;
+            width: 90px;
 
             img {
                 width: 100%;
@@ -282,9 +284,14 @@ $puple: #7A31F9;
 
             .textContainer {
                 h1 {
-                    font-size: 50px;
+                    font-size: 55px;
+                    font-family: "Radio Canada";
+                    
+
                     span {
-                        color: $puple;
+                        background: linear-gradient(to right, #7A31F9, #FF6B00);
+                        background-clip: text;
+                        color: transparent;
                     }
                 }
 
@@ -297,14 +304,27 @@ $puple: #7A31F9;
                         flex-direction: column;
 
                         li {
+                            font-family: "Radio Canada";
+                            list-style: none;
+                            position: relative;
+                            padding-left: 25px;
                             font-size: 20px;
-                            font-weight: 600
+                        }
+
+                        li::before {
+                            content: "♦";
+                            color: #7A31F9;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            
+
                         }
                     }
                 }
 
                 button {
-                    @include button(150px,50px,$puple,20px);
+                    @include button(150px,50px,#7A31F9,20px);
                     border-radius: 10px;
                     border: 1px solid #401985
                 }
@@ -348,7 +368,7 @@ $puple: #7A31F9;
         justify-content: space-around;
 
         .logo {
-            width: 130px;
+            width: 90px;
 
             img {
                 width: 100%;
@@ -429,18 +449,21 @@ $puple: #7A31F9;
                     align-items: center;
                     width: 100px;
                     height: 100px;
-                    background-color: rgba(0, 150, 0, 0.3);
-                    border: 1px solid rgba(100,100,100,0.08);
-                    backdrop-filter: blur(20px);
-                    border-radius: 50%;
+                    background-color: #20ca67;
+                    border-radius: 10%;
                     font-size: 20px;
                     cursor: pointer;
                     transition: 0.3s;
+                    border: 1px solid #333;
 
                     i {
                         font-size: 40px;
                         color: #fff;
                     }
+                }
+
+                button:hover {
+                    transform: scale(1.05);
                 }
             }
 
@@ -452,7 +475,8 @@ $puple: #7A31F9;
                 .card {
                     width: 400px;
                     height: 240px;
-                    border-radius: 45px 10px 45px 10px;
+                    padding: 5px;
+                    border-radius: 10px;
                     background-image: url(./img/CardExclusive.png);
                     background-position: center;
                     background-size: cover;
@@ -461,16 +485,19 @@ $puple: #7A31F9;
                     .top {
                         width: 100%;
                         height: 30%;
+                        padding: 20px;
                         display: flex;
                         align-items: center;
+                        justify-content: space-between;
                         
                         p {
-                            margin-left: 30px;
                             font-size: 30px;
                             color: #fff;
                         }
 
-
+                        img {
+                            width: 40px;
+                        }
                     }
 
                     .middle {
@@ -478,10 +505,10 @@ $puple: #7A31F9;
                         height: 40%;
                         display: flex;
                         align-items: center;
+                        padding: 15px;
 
                         img {
                             width: 60px;
-                            margin-left: 30px;
                         }
                     }
 
@@ -490,11 +517,16 @@ $puple: #7A31F9;
                         height: 30%;
                         display: flex;
                         align-items: center;
-                        justify-content: space-around;
+                        padding: 15px;
+                        justify-content: space-between;
+                        
 
                         .cardNumber {
                             color: #fff;
-                            font-size: 24px;
+                            font-size: 28px;
+                            letter-spacing: 2%;
+                            font-family: Radio Canada;
+                            user-select: text;
                         }
 
                         img {
@@ -515,20 +547,17 @@ $puple: #7A31F9;
                 display: none;
 
                 button {
-                    @include button(90px,90px,rgba(255,255,255,0.08),35px);
-                    background-color: rgba(100,100,100,0.08);
-                    border: 1px solid rgba(0,0,0,0.1);
-                    margin: 0 10px;
-                    backdrop-filter: blur(20px);
-                    color: $puple;
+                    @include button(90px,90px,#33333300,35px);
+                    color: #333;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
+                    border: 1px solid #333;
 
                     p {
                         font-size: 20px;
-                        color: #000;
+                        
                     }
                 }
             }

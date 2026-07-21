@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -28,9 +29,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(100, 100, 100, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
+  background-color: #fff;
+  border: 1px solid #333;
   color: #000;
   border-radius: 20px;
   flex-direction: column;
@@ -135,6 +135,8 @@
   padding-left: 10px;
   border-radius: 10px;
   border: none;
+  font-family: "Radio Canada";
+  border: 1px solid #333;
 }
 .signFrame .form button {
   margin-top: 20px;
@@ -259,7 +261,7 @@
   cursor: pointer;
 }
 .welcomePage .header .logo {
-  width: 130px;
+  width: 90px;
 }
 .welcomePage .header .logo img {
   width: 100%;
@@ -293,10 +295,14 @@
   align-items: center;
 }
 .welcomePage .main .descPart .textContainer h1 {
-  font-size: 50px;
+  font-size: 55px;
+  font-family: "Radio Canada";
 }
 .welcomePage .main .descPart .textContainer h1 span {
-  color: #7A31F9;
+  background: linear-gradient(to right, #7A31F9, #FF6B00);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 .welcomePage .main .descPart .textContainer .pointsPart {
   display: flex;
@@ -307,8 +313,18 @@
   flex-direction: column;
 }
 .welcomePage .main .descPart .textContainer .pointsPart ul li {
+  font-family: "Radio Canada";
+  list-style: none;
+  position: relative;
+  padding-left: 25px;
   font-size: 20px;
-  font-weight: 600;
+}
+.welcomePage .main .descPart .textContainer .pointsPart ul li::before {
+  content: "♦";
+  color: #7A31F9;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .welcomePage .main .descPart .textContainer button {
   width: 150px;
@@ -364,7 +380,7 @@
   justify-content: space-around;
 }
 .bankPage .title .logo {
-  width: 130px;
+  width: 90px;
 }
 .bankPage .title .logo img {
   width: 100%;
@@ -445,17 +461,19 @@
   align-items: center;
   width: 100px;
   height: 100px;
-  background-color: rgba(0, 150, 0, 0.3);
-  border: 1px solid rgba(100, 100, 100, 0.08);
-  backdrop-filter: blur(20px);
-  border-radius: 50%;
+  background-color: #20ca67;
+  border-radius: 10%;
   font-size: 20px;
   cursor: pointer;
   transition: 0.3s;
+  border: 1px solid #333;
 }
 .bankPage .main .cardsSection .emptyContainer button i {
   font-size: 40px;
   color: #fff;
+}
+.bankPage .main .cardsSection .emptyContainer button:hover {
+  transform: scale(1.05);
 }
 .bankPage .main .cardsSection .cardContainer {
   display: none;
@@ -467,7 +485,8 @@
 .bankPage .main .cardsSection .cardContainer .card {
   width: 400px;
   height: 240px;
-  border-radius: 45px 10px 45px 10px;
+  padding: 5px;
+  border-radius: 10px;
   background-image: url(./img/CardExclusive.png);
   background-position: center;
   background-size: cover;
@@ -476,34 +495,44 @@
 .bankPage .main .cardsSection .cardContainer .card .top {
   width: 100%;
   height: 30%;
+  padding: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .bankPage .main .cardsSection .cardContainer .card .top p {
-  margin-left: 30px;
   font-size: 30px;
   color: #fff;
+}
+.bankPage .main .cardsSection .cardContainer .card .top img {
+  width: 40px;
 }
 .bankPage .main .cardsSection .cardContainer .card .middle {
   width: 100%;
   height: 40%;
   display: flex;
   align-items: center;
+  padding: 15px;
 }
 .bankPage .main .cardsSection .cardContainer .card .middle img {
   width: 60px;
-  margin-left: 30px;
 }
 .bankPage .main .cardsSection .cardContainer .card .bottom {
   width: 100%;
   height: 30%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  padding: 15px;
+  justify-content: space-between;
 }
 .bankPage .main .cardsSection .cardContainer .card .bottom .cardNumber {
   color: #fff;
-  font-size: 24px;
+  font-size: 28px;
+  letter-spacing: 2%;
+  font-family: Radio Canada;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+          user-select: text;
 }
 .bankPage .main .cardsSection .cardContainer .card .bottom img {
   width: 80px;
@@ -520,7 +549,7 @@
 .bankPage .main .operationSection .operationsContainer button {
   width: 90px;
   height: 90px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(51, 51, 51, 0);
   border-radius: 10px;
   border: none;
   color: #fff;
@@ -535,17 +564,13 @@
   transform: scale(0.95);
 }
 .bankPage .main .operationSection .operationsContainer button {
-  background-color: rgba(100, 100, 100, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0 10px;
-  backdrop-filter: blur(20px);
-  color: #7A31F9;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid #333;
 }
 .bankPage .main .operationSection .operationsContainer button p {
   font-size: 20px;
-  color: #000;
 }/*# sourceMappingURL=style.css.map */
